@@ -1,0 +1,268 @@
+/* Container */
+.todo-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(0, 0, 0, 0.1);
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.todo-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  pointer-events: none;
+}
+
+/* Input */
+.todo-input {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  font-size: 1.1rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  font-weight: 400;
+  color: #333;
+}
+
+/* Add focus states to override global styles */
+.add-button:focus, .delete-button:focus, .done-button:focus, .done-all-button:focus,
+.add-button:focus-visible, .delete-button:focus-visible, .done-button:focus-visible, .done-all-button:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.5) !important;
+  outline-offset: 2px;
+  border-color: transparent !important;
+}
+
+.todo-input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.todo-input::placeholder {
+  color: #888;
+  font-weight: 400;
+}
+
+/* Buttons */
+.add-button, .delete-button, .done-button, .done-all-button {
+  padding: 0.75rem 1.5rem;
+  margin-top: 0.5rem;
+  margin-right: 0.75rem;
+  border: none !important;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.add-button {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
+}
+
+.add-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(79, 172, 254, 0.5);
+  border-color: transparent !important;
+}
+
+.add-button:active {
+  transform: translateY(0);
+}
+
+.delete-button {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  font-size: 0.85rem;
+  padding: 0.6rem 1rem;
+}
+
+.delete-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+  border-color: transparent !important;
+}
+
+.done-button {
+  background: linear-gradient(135deg, #51cf66 0%, #40c057 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(81, 207, 102, 0.3);
+  font-size: 0.85rem;
+  padding: 0.6rem 1rem;
+}
+
+.done-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(81, 207, 102, 0.4);
+  border-color: transparent !important;
+}
+
+.done-all-button {
+  background: linear-gradient(135deg, #845ec2 0%, #b39bc8 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(132, 94, 194, 0.3);
+}
+
+.done-all-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(132, 94, 194, 0.4);
+  border-color: transparent !important;
+}
+
+/* Heading */
+.todo-heading {
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.todo-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.2) 100%);
+  border-radius: 2px;
+}
+
+/* List */
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.todo-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 1);
+}
+
+/* Task Text */
+.todo-text {
+  flex-grow: 1;
+  font-size: 1.1rem;
+  color: #2d3748;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-right: 1rem;
+}
+
+.no-task-message {
+  color: rgba(255, 255, 255, 0.8);
+  font-style: italic;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 3rem 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  margin: 2rem 0;
+  font-weight: 400;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .todo-container {
+    margin: 1rem;
+    padding: 2rem;
+    max-width: none;
+  }
+  
+  .todo-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  
+  .todo-text {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  .delete-button, .done-button {
+    width: 100%;
+    margin: 0.25rem 0;
+  }
+}
+
+/* Add subtle animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.todo-item {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+/* Custom scrollbar for better aesthetics */
+.todo-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.todo-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.todo-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.todo-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
