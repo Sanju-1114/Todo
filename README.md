@@ -27,7 +27,7 @@ Clone the repo and install dependencies:
 
 ```bash
 git clone https://github.com/Sanju-1114/Todo.git
-cd todo-website
+cd Todo
 npm install
 ```
 
