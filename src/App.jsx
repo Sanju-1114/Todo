@@ -1,13 +1,16 @@
-import './App.css'
-import TodoList from './TodoList'
+import "./App.css";
+import TodoList from "./TodoList";
+import Header from "./Header";
+import Footer from "./Footer";
 
 function App() {
-
   return (
     <>
+      <Header />
       <TodoList />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

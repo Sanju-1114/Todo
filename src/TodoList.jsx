@@ -51,7 +51,7 @@ export default function TodoList() {
 
     return (
         <div className="todo-container">
-            <h4>Add a New Task</h4>
+            <h4 style={{textAlign:"center", marginBottom:"10px" }}>Add a New Task</h4>
             <input
                 type="text"
                 placeholder="add a task"
@@ -102,7 +102,6 @@ export default function TodoList() {
             <br /> <br />
             <button
                 onClick={doneAll}
-                style={{ marginLeft: "1rem", marginBottom: "1rem" }}
                 className="done-all-button"
             >
                 Mark All as Done

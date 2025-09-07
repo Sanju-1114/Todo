@@ -61,8 +61,7 @@
 /* Buttons */
 .add-button, .delete-button, .done-button, .done-all-button {
   padding: 0.75rem 1.5rem;
-  margin-top: 0.5rem;
-  margin-right: 0.75rem;
+
   border: none !important;
   border-radius: 12px;
   cursor: pointer;
@@ -74,6 +73,8 @@
   letter-spacing: 0.5px;
   position: relative;
   overflow: hidden;
+  display: block;
+  margin: 20px auto; 
 }
 
 .add-button {
@@ -227,8 +228,8 @@
   }
   
   .delete-button, .done-button {
-    width: 100%;
-    margin: 0.25rem 0;
+    width: 90%;
+    margin: 0.2rem;
   }
 }
 
